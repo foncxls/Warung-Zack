@@ -2,8 +2,8 @@ name: Build Android APK
 
 on:
   push:
-    branches: [ "main" ] # Memicu proses ketika ada pembaruan di branch main
-  workflow_dispatch: # Mengaktifkan tombol build manual di tab Actions
+    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -18,13 +18,10 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: gradle
 
-    - name: Grant Execute Permission for Gradlew
-      run: chmod +x ./gradlew
-
-    - name: Build Debug APK
-      run: ./gradlew assembleDebug
+    # Menggunakan Gradle bawaan sistem karena file ./gradlew tidak ada di proyek Anda
+    - name: Build Debug APK with Gradle System
+      run: gradle assembleDebug
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4

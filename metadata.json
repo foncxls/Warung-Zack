@@ -1,0 +1,6 @@
+{
+  "name": "Warung Zack",
+  "description": "Aplikasi manajemen stok barang, kasir transaksi penjualan, laporan keuangan harian, dan notifikasi stok menipis otomatis untuk Warung Zack.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
